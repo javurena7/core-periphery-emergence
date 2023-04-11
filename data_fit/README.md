@@ -43,5 +43,8 @@ This folder contains several files used for preprocessing datasets. A breakdown 
 2. `growth_degree_fit.py`: for fitting the growth model
 3. `plot_general.py`: for replicating Figure 4 -- this requires preprocessing all the datasets
 4. `plot_policies.py`: for plotting plots in the style of Figure 5
-5. `plot_boards`: for replicating Figure 5 
+5. `plot_boards.py`: for replicating Figure 5 
 
+
+### Disclaimer
+This code was used for analyzing our models and generating the plots in our manuscript. Many files, particularly for preprocessing datasts (e.g. `fit_twitter.py`), contain redundant code and have not been proofed for deployment. 
