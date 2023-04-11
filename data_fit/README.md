@@ -1,4 +1,4 @@
-#Data Fitting
+# Data Fitting
 
 ## Background
 
@@ -11,10 +11,16 @@ The data must be formatted so that it includes:
 2. `n`: observations of the network when each link is created, in sequence
 
 ## Sample code
+
+This sample code (1) runs simulations to get network evolution statistics from the required format and (2) fits the simulated evolution statistics.  
+
 ```python
     import rewire_degree_fit as rdf
     # Specify links via local densities of smb p0=[[paa, pab], [pab, pbb]], where pij is the probability that two random links in groups i and j are connected. 
+    # Get evolution statistics
     x, n = rdf.get_dataset(sa=.7, sb=.5, na=.3, c=.6, N=1500) #Network size 1500
+    
+    # Fit evoution stastics
     RF = RewireFit(x, n)
     sol = RF.solve(x, n) 
     print(sol) #fitted sa, sb, c
@@ -29,3 +35,13 @@ For `n`, we use a dictionary of timestamps and network statistics at time t, `{t
 $$p^{ab}_k = \left(c \frac{n^b_kk}{\sum_j(n^a_jj + n^b_jj)} + (1-c)  \frac{n^b_k}{\sum_j(n^a_j + n^b_j)}\right)s_{ab}$$
 
 Where $n_k$ is the same as `tgt_cnt`, and $k$ is `tgt_k`. The network statistics for n are then we use are then `Pa_tot` $=\sum_j(n^a_j*j)$ and `Ua_tot` $= \sum_j n^a_j$.  
+
+## Notes
+
+This folder contains several files used for preprocessing datasets. A breakdown of the most important files is:
+1. `rewiring_degree_fit.py`: for fitting the rewiring model
+2. `growth_degree_fit.py`: for fitting the growth model
+3. `plot_general.py`: for replicating Figure 4 -- this requires preprocessing all the datasets
+4. `plot_policies.py`: for plotting plots in the style of Figure 5
+5. `plot_boards`: for replicating Figure 5 
+
