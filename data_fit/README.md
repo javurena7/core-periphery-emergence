@@ -4,7 +4,7 @@
 
 We fit our models to data using a maximum-liklihood approach. 
 
-The main files for fitting are `rewire_degree_fit.py` and `growth_degree_fit.py`. Each file contains objects that fit paramters sa, sb and c via temporal likelihood functions; `RewireFit` and `GrowthFit`, respectively. 
+The main files for fitting are `rewire_degree_fit.py` and `growth_degree_fit.py`. Each file contains objects that fit paramters $s_a$, $s_b$ and $c$ via temporal likelihood functions; `RewireFit` and `GrowthFit`, respectively. 
 
 The data must be formatted so that it includes:
 1. `x`: observations of the newly created links, in sequence
