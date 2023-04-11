@@ -26,6 +26,6 @@ For the rewiring model, since there can only be one new link at each step, the l
 
 For `n`, we use a dictionary of timestamps and network statistics at time t, `{t: [Pa_tot, Pb_tot, Ua_tot, Ub_tot]}`. We ommit the notation of _t_, but all statistics here are temporal. In our likelihood functions the probability of creating a link from group $a$ to $b$, where $b$ is of degree $k$ is written as:
 
-$$p^{ab}_k = (c*(n^b_k*k)/(\sum_j(n^a_j*j+n^b_j*j))+ (1-c)*(n^b_k)/(\sum_j(n^a_j+n^b_j))$$. 
+$$p^{ab}_k = \left(c \frac{n^b_kk}{\sum_j(n^a_jj + n^b_jj)} + (1-c)  \frac{n^b_k}{\sum_j(n^a_j + n^b_j)}\right)s_{ab}$$
 
 Where $n_k$ is the same as `tgt_cnt`, and $k$ is `tgt_k`. The network statistics for n are then we use are then $Pa_{tot}=\sum_j(n^a_j*j)$, $Pb_{tot}=\sum_j(n^b_j*j)$, $Ua_{tot} = \sum_j(n^a_j)$ and $Ub_{tot} = \sum_j(n^b_j)$, 
