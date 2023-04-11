@@ -8,7 +8,7 @@ This folder contains code used for analyzing the phase space of our model. The m
 
 ## Sample code
 
-To find the fixed point of the growing or rewiring model
+To find the fixed point of the rewiring model (for growing use function `growth_fixed_points`)
 ```python
   import get_fixed_points as gfp
   eq = gfp.rewire_fixed_points(c=.9, na=.3, sa=.9, sb=.8) 
